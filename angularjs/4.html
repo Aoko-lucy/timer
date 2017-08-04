@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade system</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="Gradeapp" ng-init="marks=0" ng-controller="gradectrl">
+<h1> Grade App</h1>
+<label>Enter your mark</label>
+<input type="number" ng-model="marks">
+<h3>Your Grade {{grade}} For {{marks}} marks</h3>
+</div>
+<script type="text/javascript">
+	var app=angular.module("Gradeapp",[]);
+	app.controller("gradectrl",function($scope){
+     $scope.grade='';
+     $scope.$watch('marks',function(){
+     	if($scope.marks>="80"){
+     		$scope.grade="A";
+     	}
+     	else if($scope.marks>=70){
+     	$scope.grade="B";	
+     	}
+     	else if($scope.marks>=60){
+     		$scope.grade="C";
+     	}
+     	else{
+     		$scope.grade="F";
+     	}
+     });
+	});
+</script>
+</body>
+</html>

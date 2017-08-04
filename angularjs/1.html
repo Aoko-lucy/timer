@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Expressions</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+</head>
+<body>
+<div ng-app="" ng-init="a=2 ; b=1; fname='Mary'; lname='Atieno'; mycol='red'">
+	<p>The sum ={{1+5+10}}</p>
+	<p>First name is {{fname + "" + lname}}</p>
+	<input type="text" style="background-color: {{mycol}};" ng-model="mycol" value="{{mycol}}">
+	<p ng-bind="mycol"></p>
+</div>
+
+</body>
+</html>
